@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@/*": ["src/*"]
+    },
+    "jsx": "react-jsx", // 이 부분 추가
+    "jsxImportSource": "react" // 이 부분도 추가
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx"]
+}
