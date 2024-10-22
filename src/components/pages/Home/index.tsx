@@ -3,23 +3,19 @@ import Home from './Home';
 import { usePokemonStore } from '../../../store/useStore';
 import { DEFAULT_LENGTH, DEFAULT_OFFSET } from '../../../constant/common';
 import { usePokemonList } from '../../../api/pokemon/qurey';
-import { useEffect } from 'react';
 
 const Index = () => {
-  const { pokemons, pokemonDetailList } = usePokemonStore();
-  const { data, isLoading, isError, error } = usePokemonDetails(pokemons);
-
-  useEffect(() => {
-    if (data) {
-      console.log('datadata: ', data);
-    }
-  }, []);
+  const { pokemons } = usePokemonStore();
+  const { isLoading, isError, error } = usePokemonList(
+    DEFAULT_LENGTH,
+    DEFAULT_OFFSET
+  );
 
   return (
     <Home
       {...{ isLoading }}
       {...{ isError }}
-      {...{ pokemonDetailList }}
+      {...{ pokemons }}
       {...{ error }}
     />
   );

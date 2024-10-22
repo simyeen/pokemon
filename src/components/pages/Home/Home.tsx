@@ -14,7 +14,7 @@ interface HomeProps extends QueryState<Pokemon[]> {
   pokemons: Pokemon[];
 }
 
-const Home = ({ isLoading, isError, pokemonDetailList, error }: HomeProps) => {
+const Home = ({ isLoading, isError, pokemons, error }: HomeProps) => {
   if (isLoading) {
     return <div className='text-center'>Loading...</div>;
   }
@@ -51,9 +51,9 @@ const Home = ({ isLoading, isError, pokemonDetailList, error }: HomeProps) => {
             role='list'
             className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
           >
-            {/* {pokemons.map((pokemon) => (
+            {pokemons.map((pokemon) => (
               <PoketmonCard key={pokemon.name} pokemon={pokemon} />
-            ))} */}
+            ))}
           </ul>
         </div>
 
